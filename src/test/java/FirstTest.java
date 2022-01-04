@@ -14,4 +14,10 @@ public class FirstTest {
         Selenide.open("https://yandex.ru");
         $(Selectors.byText("Accept")).click();
     }
+
+    @Test
+    void googleSearchOpen() {
+        Selenide.open("https://google.com");
+        $(Selectors.byText("I agree")).click();
+    }
 }
