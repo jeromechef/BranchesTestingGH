@@ -1,18 +1,25 @@
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
-import java.nio.channels.Selector;
-
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class FirstTest {
     @Test
+    void yandexSearchOpen() {
+        open("https://yandex.ru");
+        $(byText("Accept")).click();
+    }
+
+    @Test
     void googleSearchOpen() {
-        Selenide.open("https://google.com");
-        $(Selectors.byText("I agree")).click();
-//        $(".FPdoLc").shouldHave(Condition.text("I'm Feeling Lucky!"));
+        open("https://google.com");
+        $(byText("I agree")).click();
+    }
+
+    @Test
+    void bingSearchOpen() {
+        open("https://bing.com");
+        $(byText("Accept")).click();
     }
 }
