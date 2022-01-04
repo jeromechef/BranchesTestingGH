@@ -20,4 +20,10 @@ public class FirstTest {
         Selenide.open("https://google.com");
         $(Selectors.byText("I agree")).click();
     }
+
+    @Test
+    void bingSearchOpen() {
+        Selenide.open("https://bing.com");
+        $(Selectors.byText("Accept")).click();
+    }
 }
